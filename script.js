@@ -106,4 +106,3 @@ inputDecimal = (dot) => {
   }
   currentNumber += dot;
 };
-
