@@ -21,7 +21,7 @@ const inputNumber = (number) => {
 numbers.forEach((number) => {
     number.addEventListener("click", (event) => {
         //console.log(event.target.value)
-        inputNumber(event.target.value)
+        inputNumber(event.target.innerText)
         updateScreen(currentNumber)
 
     })
@@ -32,7 +32,7 @@ const operators = document.querySelectorAll(".operator")
 operators.forEach((operator) => {
     operator.addEventListener("click", (event) => {
         //console.log(event.target.value)
-        inputOperator(event.target.value)
+        inputOperator(event.target.innerText)
     })
 })
 
@@ -63,11 +63,11 @@ const calculate = () => {
         case "-":
             result = parseInt(prevNumber) - parseInt(currentNumber)
             break
-        case "*":
-            result = parseInt(prevNumber) * parseInt(currentNumber)
+        case "&times;":
+            result = parseInt(prevNumber) &times; parseInt(currentNumber)
             break
-        case "/":
-            result = parseInt(prevNumber) / parseInt(currentNumber)
+        case "&divide;":
+            result = parseInt(prevNumber) &divide; parseInt(currentNumber)
             break
         default:
             return
@@ -79,7 +79,7 @@ calculationOperator = ''
 const clearBtn = document.querySelector(".all-clear")
 
 clearBtn.addEventListener('click', (event) => {
-    console.log(event.target.value)
+    console.log(event.target.innerText)
     //claerAll()
     //updateScreen(currentNumber)
 })
@@ -95,7 +95,7 @@ const decimal = document.querySelector('.decimal')
 
 decimal.addEventListener('click', (event) => {
     //console.log(event.target.value)
-    inputDecimal(event.target.value)
+    inputDecimal(event.target.innerText)
     updateScreen(currentNumber)
 })
 
